@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rishav Kumar | Senior Android Developer</title>
+<meta name="description" content="Senior Android Developer with 10+ years of experience in Kotlin, Jetpack Compose, secure authentication and payments.">
+<style>
+  :root {
+    --navy: #14294b; --navy-2: #1c3763; --accent: #1f6fb2; --accent-soft: #e8f1fa;
+    --ink: #1c2430; --muted: #5a6472; --line: #dbe3ee; --bg: #f6f8fb; --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+         color: var(--ink); background: var(--bg); line-height: 1.6; font-size: 16px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(20,41,75,.97); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  nav .brand { color: #fff; font-weight: 700; letter-spacing: .3px; }
+  nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+  nav ul a { color: #c9d9ee; font-size: 14.5px; }
+  nav ul a:hover { color: #fff; text-decoration: none; }
+
+  header.hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%); color: #fff; padding: 64px 0 96px; }
+  .hero .wrap { display: flex; align-items: center; gap: 40px; }
+  .hero img { width: 168px; height: 168px; border-radius: 50%; object-fit: cover; border: 4px solid rgba(255,255,255,.85); flex: none; }
+  .hero h1 { font-size: 44px; line-height: 1.1; margin: 0 0 8px; }
+  .hero .role { font-size: 20px; color: #bfd6ee; margin: 0 0 16px; }
+  .hero p.lead { max-width: 640px; margin: 0 0 24px; color: #e6eef8; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 15px; }
+  .btn.primary { background: #fff; color: var(--navy); }
+  .btn.ghost { border: 1.5px solid rgba(255,255,255,.6); color: #fff; }
+  .btn:hover { text-decoration: none; opacity: .9; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: -48px; }
+  .stat { background: var(--card); border-top: 3px solid var(--accent); border-radius: 10px; padding: 18px 12px; text-align: center;
+          box-shadow: 0 6px 20px rgba(20,41,75,.10); }
+  .stat b { display: block; font-size: 28px; color: var(--accent); line-height: 1.2; }
+  .stat span { font-size: 13.5px; color: var(--muted); }
+
+  section { padding: 56px 0 8px; }
+  h2 { font-size: 26px; color: var(--navy); margin: 0 0 6px; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .rule { width: 48px; height: 3px; background: var(--accent); border-radius: 2px; margin: 0 0 22px; }
+
+  .about { max-width: 780px; }
+  .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .skill { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px; }
+  .skill h3 { margin: 0 0 10px; font-size: 15.5px; color: var(--navy); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { background: var(--accent-soft); color: #174f80; font-size: 13px; padding: 3px 10px; border-radius: 999px; }
+
+  .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; }
+  .card.wide { grid-column: 1 / -1; }
+  .card .tag { font-size: 12.5px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .6px; }
+  .card h3 { margin: 4px 0 2px; font-size: 19px; color: var(--navy); }
+  .card .when { font-size: 13.5px; color: var(--muted); margin-bottom: 10px; }
+  .card ul { margin: 0 0 14px; padding-left: 18px; }
+  .card li { margin-bottom: 5px; }
+  .card .chips { margin-top: auto; }
+
+  .timeline { border-left: 2px solid var(--line); margin-left: 6px; padding-left: 24px; }
+  .job { position: relative; margin-bottom: 22px; }
+  .job::before { content: ""; position: absolute; left: -31px; top: 7px; width: 12px; height: 12px; border-radius: 50%;
+                 background: var(--accent); border: 2px solid var(--bg); }
+  .job h3 { margin: 0; font-size: 17px; color: var(--navy); }
+  .job .when { font-size: 13.5px; color: var(--muted); }
+  .job p { margin: 4px 0 0; }
+
+  .contact { background: var(--navy); color: #fff; margin-top: 64px; padding: 56px 0; text-align: center; }
+  .contact h2 { color: #fff; }
+  .contact p { color: #c9d9ee; max-width: 560px; margin: 0 auto 22px; }
+  .contact .btns { justify-content: center; }
+  footer { text-align: center; font-size: 13px; color: var(--muted); padding: 18px 0; }
+
+  @media (max-width: 800px) {
+    .hero .wrap { flex-direction: column; text-align: center; }
+    .hero h1 { font-size: 34px; }
+    .btns { justify-content: center; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .skills, .projects { grid-template-columns: 1fr; }
+    nav ul { gap: 14px; }
+    nav .brand { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Rishav Kumar</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <img src="profile.jpg" alt="Rishav Kumar">
+    <div>
+      <h1>Rishav Kumar</h1>
+      <p class="role">Senior Android Developer</p>
+      <p class="lead">I build and modernize enterprise Android apps with Kotlin and Jetpack Compose, with a focus on secure authentication, payments and clean, multi-module architecture.</p>
+      <div class="btns">
+        <a class="btn primary" href="#work">See my work</a>
+        <a class="btn ghost" href="Rishav_Kumar_Android_Developer_CV.pdf">Download CV</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/rishav-bansal-37412084" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>10+</b><span>years building Android apps</span></div>
+    <div class="stat"><b>110,000+</b><span>production users on apps I lead</span></div>
+    <div class="stat"><b>100,000+</b><span>users migrated to PingOne MFA</span></div>
+    <div class="stat"><b>3</b><span>enterprise apps led</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2><div class="rule"></div>
+    <div class="about">
+      <p>I'm a Senior Android Developer based in Chandigarh, India, with more than ten years of experience in Kotlin and Java. I currently lead Android for the Marriott Vacation Club, Vistana and Interval International apps, which together serve over 110,000 production users.</p>
+      <p>My recent work includes moving 100,000+ users from AWS Cognito to PingOne DaVinci with MFA and biometrics, delivering pricing features across exchange and Getaway bookings, and leading an incremental migration from XML to Jetpack Compose. I like owning features from technical design through to production release, and working closely with product, QA, backend and iOS teams.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2><div class="rule"></div>
+    <div class="skills">
+      <div class="skill"><h3>Languages &amp; UI</h3><div class="chips"><span class="chip">Kotlin</span><span class="chip">Java</span><span class="chip">Jetpack Compose</span><span class="chip">XML</span><span class="chip">Material Design</span><span class="chip">Custom Views</span></div></div>
+      <div class="skill"><h3>Architecture</h3><div class="chips"><span class="chip">MVVM</span><span class="chip">MVI</span><span class="chip">Clean Architecture</span><span class="chip">Multi-Module</span><span class="chip">SOLID</span></div></div>
+      <div class="skill"><h3>Security &amp; Auth</h3><div class="chips"><span class="chip">PingOne DaVinci</span><span class="chip">OAuth 2.0</span><span class="chip">OIDC</span><span class="chip">MFA</span><span class="chip">Biometrics</span><span class="chip">Android Keystore</span></div></div>
+      <div class="skill"><h3>Jetpack &amp; Async</h3><div class="chips"><span class="chip">Coroutines</span><span class="chip">Flow</span><span class="chip">Hilt</span><span class="chip">Room</span><span class="chip">Paging 3</span><span class="chip">WorkManager</span><span class="chip">Navigation</span></div></div>
+      <div class="skill"><h3>Network &amp; Payments</h3><div class="chips"><span class="chip">Retrofit</span><span class="chip">OkHttp</span><span class="chip">REST</span><span class="chip">Socket.IO</span><span class="chip">Stripe</span><span class="chip">Google Pay</span><span class="chip">Samsung Pay</span></div></div>
+      <div class="skill"><h3>Testing &amp; Tools</h3><div class="chips"><span class="chip">JUnit</span><span class="chip">MockK</span><span class="chip">Turbine</span><span class="chip">LeakCanary</span><span class="chip">Profiler</span><span class="chip">Firebase</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Selected work</h2><div class="rule"></div>
+    <div class="projects">
+
+      <div class="card wide">
+        <span class="tag">Marriott Vacation Club &amp; Vistana</span>
+        <h3>Enterprise Authentication Modernization (MFA)</h3>
+        <div class="when">May 2025 – Feb 2026</div>
+        <ul>
+          <li>Migrated authentication from AWS Cognito to PingOne DaVinci for <b>100,000+ Marriott Vacation Club and 10,000+ Vistana users</b>.</li>
+          <li>Added MFA (phone and email) and biometric sign-in, with a centralized token layer used by all secured APIs.</li>
+          <li>Designed a multi-session architecture and secure guest strategy, so account management works without ending active sessions.</li>
+          <li>Replaced deprecated Kotlin Synthetics with DataBinding in one week while raising target SDK to 36.</li>
+        </ul>
+        <div class="chips"><span class="chip">Kotlin</span><span class="chip">PingOne DaVinci</span><span class="chip">OAuth2 / OIDC</span><span class="chip">Hilt</span><span class="chip">Coroutines</span><span class="chip">Keystore</span><span class="chip">Biometrics</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Interval International</span>
+        <h3>Exchange + Cash</h3>
+        <div class="when">Apr 2026 – Oct 2026</div>
+        <ul>
+          <li>Added Trading Power and Exchange Value to exchange booking, helping members make better exchange decisions.</li>
+          <li>Redesigned key exchange screens and led the Android build from technical design to release.</li>
+        </ul>
+        <div class="chips"><span class="chip">Kotlin</span><span class="chip">MVVM</span><span class="chip">Retrofit</span><span class="chip">MuleSoft APIs</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Interval International</span>
+        <h3>Resort Fee</h3>
+        <div class="when">Oct 2025 – Apr 2026</div>
+        <ul>
+          <li>Showed mandatory resort fees, payment terms and fee advisements before booking across Exchange and Getaway journeys.</li>
+          <li>Added optional resort fees so members can review and select extra services at check-in.</li>
+        </ul>
+        <div class="chips"><span class="chip">Kotlin</span><span class="chip">MVVM</span><span class="chip">Coroutines</span><span class="chip">Retrofit</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Interval International</span>
+        <h3>Bifurcated Pricing</h3>
+        <div class="when">May 2025 – Sep 2025</div>
+        <ul>
+          <li>Delivered refundable Getaway bookings with configurable fee tiers, shown to members before they confirm a reservation.</li>
+          <li>Resolved critical production issues and shipped fixes with minimal customer impact.</li>
+        </ul>
+        <div class="chips"><span class="chip">Kotlin</span><span class="chip">MVVM</span><span class="chip">Retrofit</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Interval International</span>
+        <h3>XML to Jetpack Compose Migration</h3>
+        <div class="when">Ongoing</div>
+        <ul>
+          <li>Leading a screen-by-screen migration to Compose using interop, so legacy and new UI ship side by side.</li>
+          <li>Building reusable Compose components and moving screens to unidirectional state.</li>
+        </ul>
+        <div class="chips"><span class="chip">Jetpack Compose</span><span class="chip">Kotlin</span><span class="chip">Flow</span><span class="chip">Material 3</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">FinTech</span>
+        <h3>Homie – Cashback &amp; Digital Payments</h3>
+        <div class="when">Sep 2022 – Feb 2025</div>
+        <ul>
+          <li>Led end-to-end Android development; integrated Google Pay, Samsung Pay and the Total Processing gateway.</li>
+          <li>Built offline-first data with Room, Paging 3 and Flow; added IBAN cashback withdrawal via Lean SDK.</li>
+        </ul>
+        <div class="chips"><span class="chip">Kotlin</span><span class="chip">Hilt</span><span class="chip">Room</span><span class="chip">Paging 3</span><span class="chip">Firebase</span><span class="chip">Socket.IO</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Travel / eSIM</span>
+        <h3>Commbitz – Global eSIM Platform</h3>
+        <div class="when">Feb 2025 – May 2025</div>
+        <ul>
+          <li>Led a full migration from XML to Jetpack Compose on Clean, multi-module architecture.</li>
+          <li>Integrated Stripe payments and encrypted storage for sensitive data.</li>
+        </ul>
+        <div class="chips"><span class="chip">Jetpack Compose</span><span class="chip">Clean Architecture</span><span class="chip">Hilt</span><span class="chip">Stripe</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2><div class="rule"></div>
+    <div class="timeline">
+      <div class="job"><h3>Senior Android Developer · CMIND India Pvt Ltd</h3><div class="when">May 2025 – Present</div>
+        <p>Lead Android for the Marriott Vacation Club, Vistana and Interval International apps, owning delivery from technical design to production release.</p></div>
+      <div class="job"><h3>Senior Android Developer · Code Brew Labs</h3><div class="when">Dec 2018 – May 2025</div>
+        <p>Led Android development across Travel, FinTech, eSIM, cashback and social apps using Clean Architecture, MVVM/MVI and Compose. Mentored junior developers.</p></div>
+      <div class="job"><h3>Senior Android Developer · Orem Technologies</h3><div class="when">Jul 2017 – Nov 2018</div>
+        <p>Built eCommerce and social apps with real-time messaging, push notifications and media sharing.</p></div>
+      <div class="job"><h3>Android Developer · Appzorro</h3><div class="when">Oct 2016 – Jul 2017</div>
+        <p>Built Java apps from UI/UX wireframes with robust REST networking layers.</p></div>
+      <div class="job"><h3>Android Developer · Neo Crew Technologies</h3><div class="when">Sep 2015 – Sep 2016</div>
+        <p>Built native Android apps with reusable components, REST APIs and SQLite.</p></div>
+    </div>
+    <p style="color:var(--muted); margin-top: 8px;">B.Tech, Computer Science Engineering · Punjab Technical University · 2010 – 2014</p>
+  </div>
+</section>
+
+<div class="contact" id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>Happy to talk about Android architecture, authentication, payments or Compose migrations.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:bansalz43131@gmail.com">bansalz43131@gmail.com</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/rishav-bansal-37412084" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
+<footer>© 2026 Rishav Kumar</footer>
+
+</body>
+</html>
